@@ -1,0 +1,8 @@
+{% for web in webs %}
+server{
+        listen {{ web.listen_port }}
+{% if web.name is defined %}
+        name {{ web.name }}
+{% endif %}
+}
+{% endfor %}
