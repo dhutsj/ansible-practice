@@ -1,0 +1,16 @@
+---
+
+- hosts: scc_dev_vm
+  vars:
+    webs:
+      - web1:
+        listen_port: 81
+        name: aaa
+      - web2:
+        listen_port: 82
+      - web3:
+        listen_port: 83
+        name: bbb
+  tasks:
+      - name: copy conf
+        template: src=for_if.conf.j2 dest=/tmp

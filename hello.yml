@@ -1,0 +1,14 @@
+---
+
+- hosts: scc_dev_vm
+  tasks:
+      - name: hello1
+        command: date
+        notify: test_handler
+      - name: hello2
+        shell: uptime 
+        tags: hello_uptime
+    
+  handlers:
+      - name: test_handler
+        command: whoami

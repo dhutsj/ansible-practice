@@ -1,0 +1,5 @@
+- hosts: scc_dev_vm
+  remote_user: root
+
+  roles:
+      - role: httpd
